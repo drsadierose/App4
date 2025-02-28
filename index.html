@@ -6,6 +6,16 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+      <style>
+         img, object {
+            max-height: 90%;
+            max-width: 90%;
+         }
+         .image-container {
+            text-align: center;
+            margin-top: 10px;
+         }
+      </style>
       <script>
         let asthma_count = 0;
         let vcd_count = 0; 
@@ -55,6 +65,9 @@
 
       <div id="quiz-container" class="w3-container">
           <p id="question-text">Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
+          <div class="image-container">
+              <img id="question-image" src="https://uph-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4a98179fa9d44b5991d616cd3857819a?v=de4a8f28&t=1440xnull.jpg" alt="Symptom Image">
+          </div>
           <button onclick="nextQuestion(true);" class="w3-btn w3-black">Yes</button>
           <button onclick="nextQuestion(false);" class="w3-btn w3-black">No</button>
       </div>
