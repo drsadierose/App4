@@ -1,75 +1,71 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
- 
-Authors in chronological order of contribution:
-Tim Riedel
-Author 2
- 
-Further Information:
-http://diystream.cns.utexas.edu/
+   <head> 
+      <title>Asthma vs. VCD Checker</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+      <script>
+        let asthma_count = 0;
+        let vcd_count = 0; 
+        let currentQuestion = 0;
 
-Research Educator:
-Timothy Riedel
-triedel@utexas.edu
- 
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+        const questions = [
+            { text: "Do you experience wheezing or chest tightness, especially at night or early in the morning?", asthma: true },
+            { text: "Do you have difficulty breathing in (inspiration) rather than out (expiration) during an attack?", asthma: false },
+            { text: "Does your breathing trouble improve significantly with the use of an inhaler (such as albuterol)?", asthma: true },
+            { text: "Do your symptoms worsen with exercise but improve with rest?", asthma: false },
+            { text: "Have you been diagnosed with allergies, eczema, or a history of childhood asthma?", asthma: true },
+            { text: "Do you experience throat tightness or hoarseness during an episode?", asthma: false }
+        ];
 
-References:
-https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
--->
-	
-<head> 
-	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
+        function nextQuestion(isAsthma) {
+            if (isAsthma) {
+                asthma_count++;
+            } else {
+                vcd_count++;
+            }
+            
+            currentQuestion++;
+            
+            if (currentQuestion < questions.length) {
+                document.getElementById("question-text").innerText = questions[currentQuestion].text;
+            } else {
+                showResults();
+            }
+        }
 
-<script>
+        function showResults() {
+            const total = asthma_count + vcd_count;
+            const asthmaPercentage = total ? Math.round((asthma_count / total) * 100) : 50;
+            const vcdPercentage = 100 - asthmaPercentage;
 
-	//YOUR JAVASCRIPT GOES HERE
+            document.getElementById("quiz-container").style.display = "none";
+            document.getElementById("result-container").style.display = "block";
+            document.getElementById("result-text").innerText = 
+                `Asthma Probability: ${asthmaPercentage}%\nVocal Cord Dysfunction Probability: ${vcdPercentage}%`;
+        }
+      </script>
+   </head> 
+   <body> 
+      <header class="w3-container w3-flat-carrot">
+        <h1>Asthma vs. VCD Checker</h1>
+      </header>
 
-</script>	
+      <div id="quiz-container" class="w3-container">
+          <p id="question-text">Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
+          <button onclick="nextQuestion(true);" class="w3-btn w3-black">Yes</button>
+          <button onclick="nextQuestion(false);" class="w3-btn w3-black">No</button>
+      </div>
 
+      <div id="result-container" class="w3-container" style="display: none;">
+          <h2>Diagnosis</h2>
+          <p id="result-text"></p>
+      </div>
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
-.body {
-     margin: 0em;
-}
-
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
-
-<body>
-	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
-	
-</body>
+      <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>This is the footer!</p>
+      </footer>
+   </body>
 </html>
