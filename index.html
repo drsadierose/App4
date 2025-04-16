@@ -35,23 +35,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var asthma_count = 0;
+        var vocal cord disfuntion_count = 0;
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
+        function asthmaAdd(){
+            asthma_count = asthma_count + 1;
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function vocal cord disfuntionAdd(){
+            vocal cord disfuntion_count = vocal cord disfuntion_count + 1;
 	}
 
 	function calculateResults() {
-	    allergyPercent = (allergy_count / 4) * 100;
-	    coldPercent = (cold_count / 4) * 100;
+	    asthmaPercent = (asthma_count / 4) * 100;
+	    vocal cord disfuntionPercent = (vocal cord disfuntion_count / 4) * 100;
 	    const resultText = document.getElementById("result");
-	    resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%"; 
+	    resultText.innerHTML = "Probability it is asthma =" + asthmaPercent + "%<br> Probability it is a vocal cord disfuntion =" + vocal cord disfuntionPercent + "%"; 
 	}
 	
 	
@@ -84,11 +84,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>vocal cord disfuntion or Allergies?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you can't breath, and can't figure out if you have asthma or vocal cord disfunction? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
@@ -102,9 +102,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p> 
-		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-         	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        <p>Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
+		<a href="#two"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
+         	<a href="#two"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
 	
 	
  </div><!-- /content -->
@@ -118,9 +118,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-			<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-         		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<p>Is it harder to breathe out than breathe in during an episode?</p>
+			<a href="#three"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
+         		<a href="#three"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
 <div class="page" id="three">
@@ -129,9 +129,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p> 
-		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-         		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        <p>Do your symptoms improve significantly with an inhaler (like albuterol)?</p> 
+		<a href="#four"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
+         		<a href="#four"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
     	</div>
 </div>
 	<div class="page" id="four">
@@ -140,14 +140,39 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p>  
-	<a href="#five"  onclick="allergyAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="coldAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+        <p>Do your symptoms get worse after exercise rather than during it?</p>  
+	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+    	</div>
+</div>
+	
+</div>
+	<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a history of allergies, eczema, or childhood asthma?</p>  
+	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+    	</div>
+</div>
+	</div>
+	<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you not experience throat tightness or hoarseness during an episode?</p>  
+	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 
 	</div>
-	<div class="page" id="five">
+	<div class="page" id="seven">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 		<p id="result"></p>
