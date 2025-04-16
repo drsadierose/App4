@@ -44,14 +44,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 
         function vcdAdd(){
-            vcd_count = vocal cord disfuntion_count + 1;
+            vcd_count = vocal cord dysfuntion_count + 1;
 	}
 
 	function calculateResults() {
-	    asthmaPercent = (asthma_count / 4) * 100;
-	    vocal cord disfuntionPercent = (vocal cord disfuntion_count / 4) * 100;
+	    asthmaPercent = (asthma_count / 6) * 100;
+	    vocal cord dysfunctionPercent = (vocal cord dysfunction_count / 6) * 100;
 	    const resultText = document.getElementById("result");
-	    resultText.innerHTML = "Probability it is asthma =" + asthmaPercent + "%<br> Probability it is a vocal cord disfuntion =" + vocal cord disfuntionPercent + "%"; 
+	    resultText.innerHTML = "Probability it is asthma =" + asthmaPercent.toFixed(1) + "%<br> Probability it is a vocal cord dysfunction =" + vcdPercent.toFixed(1) + "%"; 
 	}
 	
 	
@@ -84,7 +84,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Vocal Cord Disfuntion or Asthma?</h1>
+	<h1>Vocal Cord dysfunction or Asthma?</h1>
 </div>
 	
 <div id="content" class="w3-container">
@@ -154,8 +154,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Do you have a history of allergies, eczema, or childhood asthma?</p>  
-	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+	<a href="#six"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#six"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 	</div>
@@ -166,8 +166,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Do you not experience throat tightness or hoarseness during an episode?</p>  
-	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+	<a href="#seven"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#seven"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 
