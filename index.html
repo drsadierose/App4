@@ -1,88 +1,166 @@
 <!DOCTYPE html> 
 <html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Sadie O 
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
    <head> 
-      <title>Asthma vs. VCD Checker</title>  
+      <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-      <style>
-         img, object {
-            max-height: 90%;
-            max-width: 90%;
-         }
-         .image-container {
-            text-align: center;
-            margin-top: 10px;
-         }
-      </style>
-      <script>
-        let asthma_count = 0;
-        let vcd_count = 0; 
-        let currentQuestion = 0;
-
-        const questions = [
-            { text: "Do you experience wheezing or chest tightness, especially at night or early in the morning?", asthma: true },
-            { text: "Do you have difficulty breathing in (inspiration) rather than out (expiration) during an attack?", asthma: false },
-            { text: "Does your breathing trouble improve significantly with the use of an inhaler (such as albuterol)?", asthma: true },
-            { text: "Do your symptoms worsen with exercise but improve with rest?", asthma: false },
-            { text: "Have you been diagnosed with allergies, eczema, or a history of childhood asthma?", asthma: true },
-            { text: "Do you experience throat tightness or hoarseness during an episode?", asthma: false }
-        ];
-
-        function nextQuestion(isAsthma) {
-            if (isAsthma) {
-                asthma_count++;
-            } else {
-                vcd_count++;
-            }
-            
-            currentQuestion++;
-            
-            if (currentQuestion < questions.length) {
-                document.getElementById("question-text").innerText = questions[currentQuestion].text;
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            const total = asthma_count + vcd_count;
-            const asthmaPercentage = total ? Math.round((asthma_count / total) * 100) : 50;
-            const vcdPercentage = 100 - asthmaPercentage;
-
-            document.getElementById("quiz-container").style.display = "none";
-            document.getElementById("result-container").style.display = "block";
-            document.getElementById("result-text").innerText = 
-                `Asthma Probability: ${asthmaPercentage}%\nVocal Cord Dysfunction Probability: ${vcdPercentage}%`;
-        }
-      </script>
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
-   <body> 
-      <header class="w3-container w3-flat-carrot">
-        <h1>Asthma vs. VCD Checker</h1>
-      </header>
 
-      <div id="quiz-container" class="w3-container">
-          <p id="question-text">Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
-          <div class="image-container">
-              <img id="question-image" src="https://uph-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4a98179fa9d44b5991d616cd3857819a?v=de4a8f28&t=1440xnull.jpg" alt="Symptom Image">
-          </div>
-          <button onclick="nextQuestion(true);" class="w3-btn w3-black">Yes</button>
-          <button onclick="nextQuestion(false);" class="w3-btn w3-black">No</button>
-      </div>
 
-      <div id="result-container" class="w3-container" style="display: none;">
-          <h2>Diagnosis</h2>
-          <p id="result-text"></p>
-      </div>
-      <div class="image-container">
-    <img id="question-image" src="https://uph-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4a98179fa9d44b5991d616cd3857819a?v=de4a8f28&t=1440xnull" alt="Symptom Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/300';">
+<script>
+        var allergy_count = 0;
+        var cold_count = 0;
+
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+        }
+
+        function coldAdd(){
+            cold_count = cold_count + 1;
+	}
+
+	function calculateResults() {
+	    allergyPercent = (allergy_count / 4) * 100;
+	    coldPercent = (cold_count / 4) * 100;
+	    const resultText = document.getElementById("result");
+	    resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%"; 
+	}
+	
+	
+
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p> 
+		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+         	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	
+	
+ </div><!-- /content -->
+
+    	</div>
 </div>
 
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+			<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+         		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	</div>
+</div>	
+<div class="page" id="three">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a sore throat?</p> 
+		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+         		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+    	</div>
+</div>
+	<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your symptoms seasonal or chronic?</p>  
+	<a href="#five"  onclick="allergyAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
+         		<a href="#five"  onclick="coldAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+    	</div>
+</div>
 
-      <footer class="w3-bottom w3-container w3-flat-carrot">
-        <p>By Sadie Ostrowicki!</p>
-      </footer>
-   </body>
+	</div>
+	<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+		<p id="result"></p>
+	</div>
+	
+    	
+
+		
+    	</div>
+</div>
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
 </html>
