@@ -36,15 +36,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
         var asthma_count = 0;
-        var vocal cord disfuntion_count = 0;
+        var vcd_count = 0;
 
 
         function asthmaAdd(){
             asthma_count = asthma_count + 1;
         }
 
-        function vocal cord disfuntionAdd(){
-            vocal cord disfuntion_count = vocal cord disfuntion_count + 1;
+        function vcdAdd(){
+            vcd_count = vocal cord disfuntion_count + 1;
 	}
 
 	function calculateResults() {
@@ -104,7 +104,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
 		<a href="#two"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
-         	<a href="#two"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
+         	<a href="#two"  onclick="vcdAdd();" class="w3-btn w3-black">No</a>
 	
 	
  </div><!-- /content -->
@@ -120,7 +120,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Is it harder to breathe out than breathe in during an episode?</p>
 			<a href="#three"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
-         		<a href="#three"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
+         		<a href="#three"  onclick="vcdAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
 <div class="page" id="three">
@@ -131,7 +131,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Do your symptoms improve significantly with an inhaler (like albuterol)?</p> 
 		<a href="#four"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
-         		<a href="#four"  onclick="vocal cord disfuntionAdd();" class="w3-btn w3-black">No</a>
+         		<a href="#four"  onclick="vcdAdd();" class="w3-btn w3-black">No</a>
     	</div>
 </div>
 	<div class="page" id="four">
@@ -142,7 +142,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Do your symptoms get worse after exercise rather than during it?</p>  
 	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+         		<a href="#five"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 	
@@ -155,7 +155,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Do you have a history of allergies, eczema, or childhood asthma?</p>  
 	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+         		<a href="#five"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 	</div>
@@ -167,7 +167,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	<div id="content" class="w3-container">
         <p>Do you not experience throat tightness or hoarseness during an episode?</p>  
 	<a href="#five"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
-         		<a href="#five"  onclick="vocal cord disfuntionAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+         		<a href="#five"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
     	</div>
 </div>
 
