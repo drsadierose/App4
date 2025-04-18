@@ -22,7 +22,8 @@ Brief Description of Goal of Code:
 Help people understand the cause of their breathing problems.
  
 Known Issues:
-The brain doesn't upload
+none
+	
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -39,21 +40,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var asthma_count = 0;
         var vcd_count = 0;
-
+//makes it so variables start at 0
 
         function asthmaAdd(){
-            asthma_count = asthma_count + 1;
+            asthma_count = asthma_count + 1; //add 1 for every yes
         }
 
         function vcdAdd(){
-            vcd_count = vcd_count + 1;
+            vcd_count = vcd_count + 1; //add one for every no
 	}
 
 	function calculateResults() {
-	    asthmaPercent = (asthma_count / 6) * 100;
+	    asthmaPercent = (asthma_count / 6) * 100; //calculate percentage
 	    vcdPercent = (vcd_count / 6) * 100;
 	    const resultText = document.getElementById("result");
-	    resultText.innerHTML = "Probability it is asthma =" + asthmaPercent.toFixed(1) + "%<br> Probability it is a vocal cord dysfunction =" + vcdPercent.toFixed(1) + "%"; 
+	    resultText.innerHTML = "Probability it is asthma =" + asthmaPercent.toFixed(1) + "%<br> Probability it is a vocal cord dysfunction =" + vcdPercent.toFixed(1) + "%"; //script plus probability
 	}
 	
 
@@ -61,7 +62,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </script>
 
 
-
+<!-- CSS styling goes here -->
+	
 <style>	
 body {
      margin: 0em;
@@ -99,8 +101,10 @@ body {
 	<p>Are you feeling like you can't breath, and can't figure out if you have asthma or vocal cord disfunction? Answer a few short questions to find out!</p>
 
 	<img src="https://imgs.search.brave.com/PqAKwqA2SUR_rXv88FiU8BSP-yk-8eKeX2XI-Q9wQ9U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQz/OTYzODI2OC92ZWN0/b3IvbGl0dGxlLWJv/eS13aXRoLWhhcmQt/YnJlYXRoaW5nLXBy/b2JsZW1zLWNvdWdo/aW5nLXZlY3Rvci1p/bGx1c3RyYXRpb24u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXBNTGgwY3FEX0tV/ZTd0NFl0cWdCOU90/YjVjMHZxRHVNZ0Rt/TEFZNEx1b3M9" />
-
+	//image url
+	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	//button that goes to page 1
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -113,9 +117,9 @@ body {
 	
     	<div id="content" class="w3-container">
         <p>Do you experience wheezing or chest tightness, especially at night or early in the morning?</p> 
-		<a href="#two"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#two"  onclick="asthmaAdd();" class="w3-btn w3-black">Yes</a> 
          	<a href="#two"  onclick="vcdAdd();" class="w3-btn w3-black">No</a>
-	
+	//for all the questions yes adds 1 to the asthma container and no adds 1 one to the vcd container
 	
  </div><!-- /content -->
 
@@ -177,6 +181,8 @@ body {
         <p>Do you not experience throat tightness or hoarseness during an episode?</p>  
 		<a href="#seven"  onclick="asthmaAdd(); calculateResults();" class="w3-btn w3-black">Yes</a>
         	<a href="#seven"  onclick="vcdAdd();  calculateResults();" class="w3-btn w3-black">No</a>	
+
+		//both adds to container and activates claculates results in javascript
     	</div>
 </div>
 
